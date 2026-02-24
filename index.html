@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rebar Hamshin Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        p {
+            font-family: "Geist Mono", monospace;
+            color: oklch(0.9992 0.0011 197.14);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            background-color: oklab(22.227% -0.00577 -0.00176 / 0.848);
+            border-radius: 50px;
+            padding: 10px 16px;
+            z-index: 1000;
+            border: 1px solid grey;
+
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: oklch(0.9992 0.0011 197.14);
+        }
+
+        .nav-btn:hover {
+            opacity: 70%;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-btn.active {
+            background-color: rgb(162, 83, 162);
+        }
+
+        .nav-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hello-intro {
+            font-family: "Geist Mono", monospace;
+            color: oklch(0.9992 0.0011 197.14);
+            padding-top: 70px;
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-buttons {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 0;
+            border: none;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(162, 83, 162);
+        }
+
+        .social-buttons img {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            stroke: currentColor;
+        }
+
+        .social-buttons:hover {
+            cursor: pointer;
+            opacity: 70%;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-page {
+            isolation: isolate;
+            background-color: oklab(22.227% -0.00577 -0.00176 / 0.848);
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 300px;
+            border: 1px solid grey;
+        }
+
+        .contact-button {
+            display: flex;
+            padding-top: 5px;
+            justify-content: center;
+            margin-top: 20px;
+            height: 30px;
+            width: 150px;
+            background-color: rgb(13, 15, 28);
+            color: whitesmoke;
+            font-family: "Geist Mono", monospace;
+            align-self: center;
+            border: none;
+        }
+
+        .contact-button:hover {
+            cursor: pointer;
+            opacity: 70%;
+            transition: opacity 0.5s ease;
+        }
+
+        .Name {
+            display: flex;
+            font-size: 35px;
+            justify-content: center;
+            margin-bottom: auto;
+
+        }
+
+        .location {
+            display: flex;
+            justify-content: center;
+            opacity: 50%;
+        }
+
+        .name-description {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: larger;
+            font-family: fantasy;
+            opacity: 70%;
+            color: oklch(0.9992 0.0011 197.14);
+            margin-bottom: auto;
+
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .sustainable-text {
+            color: rgb(162, 83, 162);
+            text-decoration: underline;
+        }
+
+        .projects-header {
+            margin-top: 100px;
+            padding: 48px 16px;
+            text-align: center;
+        }
+
+        .projects-h1 {
+            margin: 0;
+            font-family: "Geist Mono", monospace;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1;
+            color: oklch(14.958% 0.00002 271.152);
+        }
+
+        .projects-code {
+            display: block;
+        }
+
+        .projects-desciption {
+            margin-top: 50px;
+            opacity: 70%;
+            text-align: center;
+        }
+
+        .projects-newline {
+            display: block;
+        }
+
+        .projects-numbers {
+            display: flex;
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stats {
+            display: flex;
+            gap: 90px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .stat,
+        .products-launched {
+            display: block;
+            text-align: left;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: "Geist Mono", monospace;
+            color: oklch(0.9992 0.0011 197.14);
+            font-weight: 900;
+            font-size: 64px;
+            line-height: 1;
+            opacity: 60%;
+        }
+
+        .stat-label {
+            display: block;
+            margin-top: 8px;
+            font-family: "Geist Mono", monospace;
+            color: oklch(0.9992 0.0011 197.14);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0.95;
+        }
+
+        .scroll-down-image {
+            text-align: center;
+        }
+
+        .scroll-down-icon {
+            margin-top: 300px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+
+<body class="main-page">
+    <nav class="navbar">
+        <button class="nav-btn active" title="Home">
+            <img src="icons/home-button.svg" alt="Home">
+        </button>
+        <button class="nav-btn" title="Projects">
+            <img src="icons/projects-button.svg" alt="Projects">
+        </button>
+        <button class="nav-btn" title="Skills">
+            <img src="icons/light-bulb.svg" alt="Skills">
+        </button>
+        <button class="nav-btn" title="Contact">
+            <img src="icons/mail-button.svg" alt="Contact">
+        </button>
+    </nav>
+    <h1 align="center" class="hello-intro">Hello, Welcome to my portfolio!</h1>
+    <div class="info-container">
+        <div class="info">
+            <p class="Name">
+                Rebar Hamshin
+            </p>
+            <p class="name-description">
+                Computer Engineering student at KTH Royal institute of Technology
+            </p>
+            <p class="location">
+                Stockholm, Sweden
+            </p>
+            <div class="social-row">
+                <a class="social-buttons" href="https://github.com/RebarHamshin" target="_blank">
+                    <img src="icons/github-button.svg" alt="GitHub">
+                </a>
+
+                <a class="social-buttons" href="https://www.linkedin.com/in/rebar-hamshin-4015822a1/" target="_blank">
+                    <img src="icons/linkedin-button.svg" alt="LinkedIn">
+                </a>
+            </div>
+            <a class="contact-button">
+                Contact Me
+            </a>
+
+        </div>
+    </div>
+
+    <div class="scroll-down-image">
+        <img class="scroll-down-icon" src="icons/scroll-down-icon.svg">
+    </div>
+
+
+    <div>
+        <div class="projects-text">
+            <header class="projects-header">
+                <h1 class="projects-h1">Clean and <span class="sustainable-text">sustainable</span>
+                    <span class="projects-code">code</span>
+                </h1>
+                <p class="projects-desciption">
+                    A passion for fullstack development, with a focus on
+                    <span class="projects-newline">creating clean and sustainable code.</span>
+
+                </p>
+            </header>
+            <div class="projects-numbers">
+                <div class="stats">
+                    <span class="stat">
+                        <span class="stat-number">+3</span>
+                        <span class="stat-label">YEARS OF<br>EXPERIENCE</span>
+                    </span>
+                    <span class="products-launched">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">PRODUCT<br>LAUNCHED</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
